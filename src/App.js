@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "bulma/css/bulma.css";
+import "./App.css";
+import FormField from "./formfield/FormField";
+import Navbar from "./navbar/Navbar";
+import CoolButton from "./coolButton/CoolButton";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+
+      <div className="formField">
+        <FormField label="Name" type="text" placeholder="e.g Alex Smith" />
+        <FormField
+          label="Email"
+          type="email"
+          placeholder="e.g. alexsmith@gmail.com"
+        />
+      </div>
+
+      <div className="button">
+        <CoolButton isLink isWarning className="is-rounded my-class">
+          Button 1
+        </CoolButton>
+        <CoolButton isSmall isSuccess>
+          Button 2
+        </CoolButton>
+      </div>
     </div>
   );
 }
